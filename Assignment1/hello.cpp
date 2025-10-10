@@ -1,7 +1,7 @@
 /*
 * Sokolova Dasha
 * st141899@student.spbu.ru
-* My project number one
+* My project number one.
 */
 
 #include "hello.h"
