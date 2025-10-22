@@ -10,7 +10,7 @@
 #include <filesystem>
 #include <algorithm>
 
-void ReversedFile(const std::string inputFile, const std::string outputFile) {
+void ReversedFile(std::string inputFile) {
     std::ifstream in_file; // declaration of the input file
     in_file.open(inputFile, std::ios::binary | std::ios::in); // open the input file
     
@@ -22,7 +22,7 @@ void ReversedFile(const std::string inputFile, const std::string outputFile) {
 
     std::reverse(FileArray, FileArray + fileSize); //reverse the array
 
-    std::ofstream outfile(outputFile, std::ios::binary | std::ios::out); //open the output file
+    std::ofstream outfile("reversed.pdf", std::ios::binary | std::ios::out); //open the output file
     outfile.write(FileArray, fileSize); //write the array to a new file
     outfile.close(); // close the file we have wrote
 

@@ -9,6 +9,6 @@
 
 #ifndef REVERSE_FILE_H
 #define REVERSE_FILE_H
-void ReversedFile();
+void ReversedFile(std::string inputFile);
 
 #endif
