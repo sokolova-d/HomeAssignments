@@ -7,5 +7,7 @@
 #include "reverse_file.h"
 
 int main(){
-	ReversedFile();
+    std::string inFile = "normal.pdf"
+    std::string outFile = "reversed.pdf"
+    ReversedFile(inFile, outFile);
 }
