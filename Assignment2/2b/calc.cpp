@@ -12,9 +12,12 @@
 double Calculate(const std::string input) {
     double* stack = new double[100];
     double* top = stack; // making pointer
+	
+	std::stringstream stream(input);
+	std::string token;
 
     while (stream >> token) {
-        if (token == "+" || token == "-" || token == "*" || token == "") {
+        if (token == "+" || token == "-" || token == "*" || token == "/") {
             // operand recording
             double b = *top;
             top--;
