@@ -19,10 +19,13 @@ double Calculate(const std::string input) {
     while (stream >> token) {
         if (token == "+" || token == "-" || token == "*" || token == "/") {
             // operand recording
-            double b = *top;
+            double b;
+			b = *top;
             top--;
-            double a = *top;
-            double result == 0.0
+            double a;
+			a = *top;
+            double result;
+            result = 0.0;
 
             // processing operations with numbers
             if (token == "+") result = a+b;
@@ -32,9 +35,9 @@ double Calculate(const std::string input) {
 
             // write the result back in stack
             *top = result;
-        }
-        else {
-            top++
+        
+        } else {
+            top++;
             *top = std::stod(token);
         }
     }

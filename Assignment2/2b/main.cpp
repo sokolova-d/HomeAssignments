@@ -12,6 +12,9 @@ int main() {
     std::cout << "Enter an arithmetic expression:\n";
     std::string in; // read the string
     std::getline(std::cin, in);
+	
+	double result = Calculate(in);
+	std::cout << "Result: " << result <<std::endl; // output the result
 
     return 0;
 }
