@@ -1,5 +1,5 @@
 PROJECT = Transformers
-CXX = g++ C
+CXX = g++
 XXFLAGS = -Wall -Wextra
 SRC = main.cpp Transformer.cpp Autobot.cpp Decepticon.cpp Maximal.cpp Weapon.cpp TargetSys.cpp
 OBJ = $(SRC:.cpp=.o)
@@ -9,10 +9,10 @@ OBJ = $(SRC:.cpp=.o)
 all: $(PROJECT)
 
 $(PROJECT): $(OBJ)
-  $(CXX) -o $@ $^ $(CXXFLAGS)
+	$(CXX) -o $@ $^ $(CXXFLAGS)
 
 %.o: %.cpp
-  $(CXX) -c -o $@ $< $(CXXFLAGS)
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
 clean:
-  rm -f $(OBJ) $(PROJECT)
+	rm -f $(OBJ) $(PROJECT)

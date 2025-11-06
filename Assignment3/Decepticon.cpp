@@ -4,42 +4,42 @@
 * My project number three.
 */
 
-#include "Deception.h"
-#include <iosream>
+#include "Decepticon.h"
+#include <iostream>
 
 //constructor
-Deception::Deception(const std::string &name, int level, int fuel, Weapon weapon, int agression, int stealth int isleader):
-    Transformer(name. level, fuel, weapon),
+Decepticon::Decepticon(const std::string &name, int level, int fuel, Weapon weapon, int agression, int stealth, bool isleader):
+    Transformer(name, level, fuel, weapon),
     _agression(agression),
     _stealth(stealth),
     _isleader(isleader) {};
 
 //methods
-void Deception::terrorize() {
-    std::cout << _name << " agression level: " << _agression << ".\n";
+void Decepticon::terrorize() {
+    std::cout << getName()  << " agression level: " << _agression << ".\n";
 }
-void Deception::fire() {
-    std::cout << _name << " fires weapon with damage.\n";
+void Decepticon::fire() {
+    std::cout << getName() << " fires weapon with damage.\n";
 }
 
 //getters
-int Deception::getAgression() {
+int Decepticon::getAgression() {
     return _agression;
 }
-int Deception::getStealth() {
+int Decepticon::getStealth() {
     return _stealth;
 }
-bool Deception::getIsLeader() {
+bool Decepticon::getIsLeader() {
     return _isleader;
 }
 
 //setters
-void Deception::getAgression(int agression) {
+void Decepticon::setAgression(int agression) {
     _agression = agression;
 }
-void Deception::getStealth(int stealth) {
+void Decepticon::setStealth(int stealth) {
     _stealth = stealth;
 }
-void Deception::setIsLeader(bool isleader) {
-    _isleader = isleade;
+void Decepticon::setIsLeader(bool isleader) {
+    _isleader = isleader;
 }

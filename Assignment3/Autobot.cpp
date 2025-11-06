@@ -8,39 +8,39 @@
 #include <iostream>
 
 //constructor
-Autobot::Autobot(const std::string &name, int level, int fuel, Weapon weapon, const std::string &wehicleForm, int armor, int speed):
+Autobot::Autobot(const std::string &name, int level, int fuel, Weapon weapon, const std::string &vehicleForm, int armor, int speed):
     Transformer(name, level, fuel, weapon),
     _vehicleForm(vehicleForm),
     _armor(armor),
     _speed(speed) {};
 
 //methods
-void Authobot::repair() {
-    std::cout << _name << " is repairing allies.\n";
+void Autobot::repair() {
+    std::cout << getName()<< " is repairing allies.\n";
 }
-void Authobot::transform() {
-    std::cout << _name << " transforms into " << _vehicleForm << ".\n";
+void Autobot::transform() {
+    std::cout << getName() << " transforms into " << _vehicleForm << ".\n";
 }
 
 //getters
-std::string Authobot::getVehicle() {
+std::string Autobot::getVehicle() {
     return _vehicleForm;
 }
-int Authobot::getArmor() {
+int Autobot::getArmor() {
     return _armor;
 }
-int Authobot::getSpeed() {
+int Autobot::getSpeed() {
     return _speed;
 }
 
 //setters
-void Authobot::getVehicle(const std::string &vehicleForm) {
+void Autobot::setVehicle(const std::string &vehicleForm) {
     _vehicleForm = vehicleForm;
 }
-void Authobot::getArmor(int armor) {
+void Autobot::setArmor(int armor) {
     _armor = armor;
 }
-void Authobot::getSpeed(int speed) {
+void Autobot::setSpeed(int speed) {
     _speed = speed;
 }
 

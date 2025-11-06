@@ -7,8 +7,8 @@
 #include "Weapon.h"
 
 Weapon::Weapon(const std::string &name, int damage):
-    _name(name);
-    _damage(damamge) {};
+    _name(name),
+    _damage(damage) {};
 
 std::string Weapon::getName() {
     return _name;

@@ -9,10 +9,10 @@
 
 #include "Transformer.h"
 
-class Deception: public Transformer {
+class Decepticon: public Transformer {
     public:
         //constructor
-        Deception(const std::string &name, int level, int fuel, Weapon weapon, int agression, int stealth int isleader);
+        Decepticon(const std::string &name, int level, int fuel, Weapon weapon, int agression, int stealth, bool isleader);
 
         //methods
         void terrorize();
@@ -21,7 +21,7 @@ class Deception: public Transformer {
         //getters
         int getAgression();
         int getStealth();
-        int getIsLeader();
+        bool getIsLeader();
 
         //setters
         void setAgression(int agression);

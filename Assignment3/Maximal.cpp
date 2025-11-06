@@ -9,7 +9,7 @@
 
 //constructor
 Maximal::Maximal(const std::string &name, int level, int fuel, Weapon weapon, bool camouflage, int agility, int endurance):
-    Transformer(name. level, fuel, weapon),
+    Transformer(name, level, fuel, weapon),
     _camouflage(camouflage),
     _agility(agility),
     _endurance(endurance) {};
@@ -17,17 +17,17 @@ Maximal::Maximal(const std::string &name, int level, int fuel, Weapon weapon, bo
 //methods
 void Maximal::actStealth() {
     if(_camouflage) {
-        std::cout << _name << " activates stealth mode.\n";
+        std::cout << getName()  << " activates stealth mode.\n";
     } else {
-        std::cout << _name << "'s camouflage is off.\n";
+        std::cout << getName()  << "'s camouflage is off.\n";
     }
 }
 void Maximal::move() {
-    std::cout << _name << " moves forward.\n";
+    std::cout << getName()  << " moves forward.\n";
 }
 
 //getters
-bool Maximal::isCamouflaged() {
+bool Maximal::getisCamouflaged() {
     return _camouflage;
 }
 int Maximal::getAgility() {
@@ -38,13 +38,13 @@ int Maximal::getEndurance() {
 }
 
 //setters
-void Maximal::isCamouflaged(bool camouflage) {
+void Maximal::setisCamouflaged(bool camouflage) {
     _camouflage = camouflage;
 }
-void Maximal::getAgility(int agility) {
+void Maximal::setAgility(int agility) {
     _agility = agility;
 }
-void Maximal::getEndurance(int endurance) {
+void Maximal::setEndurance(int endurance) {
     _endurance = endurance;
 }
 

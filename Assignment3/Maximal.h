@@ -19,13 +19,13 @@ class Maximal: public Transformer {
         void move() override;
 
         //getters
-        bool IsCamouflaged();
+        bool getisCamouflaged();
         int getAgility();
         int getEndurance();
 
         //setters
-        void setCamouflage(bool camouflage);
-        void setAgiliy(int agility);
+        void setisCamouflaged(bool camouflage);
+        void setAgility(int agility);
         void setEndurance(int endurance);
 
     private:

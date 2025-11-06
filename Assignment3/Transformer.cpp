@@ -27,7 +27,7 @@ void Transformer::fire() {
     if (_ammo > 0) _ammo--;
 }
 void Transformer::transform() {
-    reeturn true;
+    std::cout << _name << " is transforming.\n";
 }
 
 //getters
@@ -43,22 +43,22 @@ int Transformer::getFuel() {
 int Transformer::getAmmo() {
     return _ammo;
 }
-const Weapon Transformer::getWeapon() {
-    return *_weapon;
+Weapon Transformer::getWeapon() const {
+    return _weapon;
 }
 
 //setters
 void Transformer::setName(const std::string &name) {
     _name = name;
 }
-void Transformer::setLvl(int lvl) {
+void Transformer::setLvl(int level) {
     _level = level;
 }
-void Transformer::setFuael(int fuel) {
-    return _fuel = fuel;
+void Transformer::setFuel(int fuel) {
+    _fuel = fuel;
 }
 void Transformer::setAmmo(int ammo) {
-    return _ammo = ammo;
+    _ammo = ammo;
 }
 void Transformer::setWeapon(Weapon weapon) {
     _weapon = weapon;

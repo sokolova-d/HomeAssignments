@@ -17,9 +17,9 @@ class Transformer {
         ~Transformer();
 
         //Methods
-        void move();
-        void fire();
-        void transform();
+        virtual void move();
+        virtual void fire();
+        virtual void transform();
 
         //Getters
         std::string getName();
@@ -44,7 +44,7 @@ class Transformer {
         //Composition
         TargetSys _targeting;
         //Association
-        Weapon *_weapon;
+        Weapon _weapon;
 };
 
 #endif
