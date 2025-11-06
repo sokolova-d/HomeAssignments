@@ -9,12 +9,12 @@
 
 #include <string>
 
-class Weapon(
+class Weapon {
     public:
         Weapon(const std::string &name = "Unknown", int damage = 0);
         
         std::string getName();
-        unt getDamage();
+        int getDamage();
 
         void setName(const std::string &name);
         void setDamage(int damage);
