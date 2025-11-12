@@ -12,7 +12,7 @@
 class Decepticon: public Transformer {
     public:
         //constructor
-        Decepticon(const std::string &name, int level, int fuel, Weapon weapon, int agression, int stealth, bool isleader);
+        Decepticon(const std::string &name, int level, int fuel, Weapon* weapon, int agression, int stealth, bool isleader);
 
         //methods
         void terrorize();

@@ -9,7 +9,7 @@
 #include "Weapon.h"
 #include "TargetSys.h"
 
-Transformer::Transformer(const std::string &name, int level, int fuel, Weapon weapon):
+Transformer::Transformer(const std::string &name, int level, int fuel, Weapon* weapon):
     _name(name),
     _level(level),
     _fuel(fuel),
@@ -43,7 +43,7 @@ int Transformer::getFuel() {
 int Transformer::getAmmo() {
     return _ammo;
 }
-Weapon Transformer::getWeapon() const {
+Weapon* Transformer::getWeapon() const {
     return _weapon;
 }
 
@@ -60,6 +60,6 @@ void Transformer::setFuel(int fuel) {
 void Transformer::setAmmo(int ammo) {
     _ammo = ammo;
 }
-void Transformer::setWeapon(Weapon weapon) {
+void Transformer::setWeapon(Weapon* weapon) {
     _weapon = weapon;
 }

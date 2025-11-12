@@ -13,7 +13,7 @@
 
 class Transformer {
     public: //constructor and destructor
-        Transformer(const std::string &name, int level, int fuel, Weapon weapon);
+        Transformer(const std::string &name, int level, int fuel, Weapon* weapon);
         ~Transformer();
 
         //Methods
@@ -26,14 +26,14 @@ class Transformer {
         int getLvl();
         int getFuel();
         int getAmmo();
-        Weapon getWeapon() const;
+        Weapon* getWeapon() const;
 
         //Setters
         void setName(const std::string &name);
         void setLvl(int level);
         void setFuel(int fuel);
         void setAmmo(int ammo);
-        void setWeapon(Weapon weapon);
+        void setWeapon(Weapon* weapon);
 
     private:
         //Fields
@@ -44,7 +44,7 @@ class Transformer {
         //Composition
         TargetSys _targeting;
         //Association
-        Weapon _weapon;
+        Weapon* _weapon;
 };
 
 #endif

@@ -12,7 +12,7 @@
 class Maximal: public Transformer {
     public:
         //constructor
-        Maximal(const std::string &name, int level, int fuel, Weapon weapon, bool camouflage, int agility, int endurance);
+        Maximal(const std::string &name, int level, int fuel, Weapon* weapon, bool camouflage, int agility, int endurance);
 
         //methods
         void actStealth();

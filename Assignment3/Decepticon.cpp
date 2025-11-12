@@ -8,7 +8,7 @@
 #include <iostream>
 
 //constructor
-Decepticon::Decepticon(const std::string &name, int level, int fuel, Weapon weapon, int agression, int stealth, bool isleader):
+Decepticon::Decepticon(const std::string &name, int level, int fuel, Weapon* weapon, int agression, int stealth, bool isleader):
     Transformer(name, level, fuel, weapon),
     _agression(agression),
     _stealth(stealth),

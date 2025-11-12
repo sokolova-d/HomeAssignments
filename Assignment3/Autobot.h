@@ -12,7 +12,7 @@
 class Autobot: public Transformer {
     public:
         //constructor
-        Autobot(const std::string &name, int level, int fuel, Weapon weapon, const std::string &wehicleForm, int armor, int speed);
+        Autobot(const std::string &name, int level, int fuel, Weapon* weapon, const std::string &wehicleForm, int armor, int speed);
 
         //methods
         void repair();

@@ -8,7 +8,7 @@
 #include <iostream>
 
 //constructor
-Autobot::Autobot(const std::string &name, int level, int fuel, Weapon weapon, const std::string &vehicleForm, int armor, int speed):
+Autobot::Autobot(const std::string &name, int level, int fuel, Weapon* weapon, const std::string &vehicleForm, int armor, int speed):
     Transformer(name, level, fuel, weapon),
     _vehicleForm(vehicleForm),
     _armor(armor),

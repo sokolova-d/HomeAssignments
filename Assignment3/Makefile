@@ -1,18 +1,26 @@
-PROJECT = Transformers
 CXX = g++
-XXFLAGS = -Wall -Wextra
-SRC = main.cpp Transformer.cpp Autobot.cpp Decepticon.cpp Maximal.cpp Weapon.cpp TargetSys.cpp
-OBJ = $(SRC:.cpp=.o)
+CXXFLAGS = -std=c++17 -Wall -Iinclude
+LDFLAGS = -lgtest -lgtest_main -pthread
 
-.PHONY: all clean
+SRC = Transformer.cpp Autobot.cpp Decepticon.cpp Maximal.cpp Weapon.cpp TargetSys.cpp
 
-all: $(PROJECT)
+TESTS = test_transformer.cpp test_autobot.cpp test_decepticon.cpp test_maximal.cpp
 
-$(PROJECT): $(OBJ)
-	$(CXX) -o $@ $^ $(CXXFLAGS)
+OBJS = $(SRC:.cpp=.o)
+TEST_OBJS = $(TESTS:.cpp=.o)
+
+TARGET = Transformers
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS) $(TEST_OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS) $(TEST_OBJS) $(LDFLAGS)
 
 %.o: %.cpp
-	$(CXX) -c -o $@ $< $(CXXFLAGS)
+	$(CXX) $(CXXFLAGS) -c $<
 
 clean:
-	rm -f $(OBJ) $(PROJECT)
+	rm -f *.o $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)

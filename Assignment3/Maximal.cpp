@@ -8,7 +8,7 @@
 #include <iostream>
 
 //constructor
-Maximal::Maximal(const std::string &name, int level, int fuel, Weapon weapon, bool camouflage, int agility, int endurance):
+Maximal::Maximal(const std::string &name, int level, int fuel, Weapon* weapon, bool camouflage, int agility, int endurance):
     Transformer(name, level, fuel, weapon),
     _camouflage(camouflage),
     _agility(agility),
