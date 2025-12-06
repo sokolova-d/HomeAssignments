@@ -5,10 +5,12 @@
 */
 
 #include <gtest/gtest.h>
+#include <sstream>
 #include "Maximal.h"
 #include "Weapon.h"
 
-TEST(MaximalTest, SetGet) {
+TEST(MaximalTest, SetGet)
+{
     Weapon w("Claws", 60);
     Maximal m("Cheetor", 9, 130, &w, true, 85, 70);
 
@@ -28,7 +30,8 @@ TEST(MaximalTest, SetGet) {
     EXPECT_EQ(m.getEndurance(), 80);
 }
 
-TEST(MaximalTest, StealthOutput) {
+TEST(MaximalTest, StealthOutput)
+{
     Weapon w("Claws", 60);
     Maximal m("Cheetor", 9, 130, &w, true, 85, 70);
 
@@ -39,7 +42,8 @@ TEST(MaximalTest, StealthOutput) {
     EXPECT_NE(output.find("Cheetor activates stealth mode"), std::string::npos);
 }
 
-TEST(MaximalTest, OverrideMove) {
+TEST(MaximalTest, OverrideMove)
+{
     Weapon w("Claws", 60);
     Maximal m("Cheetor", 9, 130, &w, true, 85, 70);
 
@@ -48,4 +52,28 @@ TEST(MaximalTest, OverrideMove) {
     std::string output = testing::internal::GetCapturedStdout();
 
     EXPECT_NE(output.find("Cheetor moves forward"), std::string::npos);
+}
+
+TEST(MaximalTest, Sprint)
+{
+    Weapon w("Claws", 40);
+    Maximal m("Cheetor", 5, 80, &w, true, 90, 60);
+
+    testing::internal::CaptureStdout();
+    m.sprint();
+    std::string out = testing::internal::GetCapturedStdout();
+
+    EXPECT_NE(out.find("sprints"), std::string::npos);
+}
+
+TEST(MaximalTest, OperatorOutput)
+{
+    Weapon w("Claws", 40);
+    Maximal m("Cheetor", 5, 80, &w, true, 90, 60);
+
+    std::stringstream ss;
+    ss << m;
+    std::string out = ss.str();
+
+    EXPECT_NE(out.find("Maximal"), std::string::npos);
 }

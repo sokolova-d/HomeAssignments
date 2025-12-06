@@ -9,6 +9,7 @@
 TargetSys::TargetSys() {}
 TargetSys::~TargetSys() {}
 
-bool TargetSys::lockTarget() {
+bool TargetSys::lockTarget()
+{
     return true;
 }

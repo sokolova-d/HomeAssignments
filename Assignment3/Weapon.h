@@ -9,19 +9,20 @@
 
 #include <string>
 
-class Weapon {
-    public:
-        Weapon(const std::string &name = "Unknown", int damage = 0);
-        
-        std::string getName();
-        int getDamage();
+class Weapon
+{
+public:
+    Weapon(const std::string &name = "Unknown", int damage = 0);
 
-        void setName(const std::string &name);
-        void setDamage(int damage);
+    std::string getName();
+    int getDamage();
 
-    private:
-        std::string _name;
-        int _damage;
+    void setName(const std::string &name);
+    void setDamage(int damage);
+
+private:
+    std::string _name;
+    int _damage;
 
 };
 

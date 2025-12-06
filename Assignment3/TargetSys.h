@@ -7,12 +7,13 @@
 #ifndef TARGETSYS_H
 #define TARGETSYS_H
 
-class TargetSys {
-    public:
-        TargetSys();
-        ~TargetSys();
+class TargetSys
+{
+public:
+    TargetSys();
+    ~TargetSys();
 
-        bool lockTarget();
+    bool lockTarget();
 };
 
 #endif

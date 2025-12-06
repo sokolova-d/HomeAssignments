@@ -8,7 +8,8 @@
 #include "Decepticon.h"
 #include "Weapon.h"
 
-TEST(DecepticonTest, SetGet) {
+TEST(DecepticonTest, SetGet)
+{
     Weapon w("Laser", 120);
     Decepticon d("Megatron", 15, 200, &w, 90, 70, true);
 
@@ -28,7 +29,8 @@ TEST(DecepticonTest, SetGet) {
     EXPECT_EQ(d.getIsLeader(), true);
 }
 
-TEST(DecepticonTest, FireOverriden) {
+TEST(DecepticonTest, FireOverriden)
+{
     Weapon w("Laser", 120);
     Decepticon d("Megatron", 15, 200, &w, 90, 70, true);
 
@@ -39,7 +41,8 @@ TEST(DecepticonTest, FireOverriden) {
     EXPECT_NE(output.find("Megatron fires weapon with damage"), std::string::npos);
 }
 
-TEST(DecepticonTest, TerrorizeTest) {
+TEST(DecepticonTest, TerrorizeTest)
+{
     Weapon w("Laser", 120);
     Decepticon d("Megatron", 15, 200, &w, 90, 70, true);
 
@@ -48,4 +51,28 @@ TEST(DecepticonTest, TerrorizeTest) {
     std::string output = testing::internal::GetCapturedStdout();
 
     EXPECT_NE(output.find("Megatron agression level: 90"), std::string::npos);
+}
+
+TEST(DecepticonTest, Intimidate)
+{
+    Weapon w("Laser", 120);
+    Decepticon d("Megatron", 15, 200, &w, 90, 70, true);
+
+    testing::internal::CaptureStdout();
+    d.intimidate();
+    std::string out = testing::internal::GetCapturedStdout();
+
+    EXPECT_NE(out.find("intimidates"), std::string::npos);
+}
+
+TEST(DecepticonTest, OperatorOutput)
+{
+    Weapon w("Laser", 120);
+    Decepticon d("Megatron", 15, 200, &w, 90, 70, true);
+
+    std::stringstream ss;
+    ss << d;
+    std::string out = ss.str();
+
+    EXPECT_NE(out.find("Decepticon"), std::string::npos);
 }
