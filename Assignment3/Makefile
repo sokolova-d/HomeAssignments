@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Iinclude
+CXXFLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror -I.
 LDFLAGS = -lgtest -lgtest_main -pthread
 
 SRC = Transformer.cpp Autobot.cpp Decepticon.cpp Maximal.cpp Weapon.cpp TargetSys.cpp

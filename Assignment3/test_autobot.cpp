@@ -5,10 +5,12 @@
 */
 
 #include <gtest/gtest.h>
+#include <sstream>
 #include "Autobot.h"
 #include "Weapon.h"
 
-TEST(AutobotTest, SetGet) {
+TEST(AutobotTest, SetGet)
+{
     Weapon w("Blaster", 80);
     Autobot a("Bee", 7, 120, &w, "Car", 50, 200);
 
@@ -28,7 +30,8 @@ TEST(AutobotTest, SetGet) {
     EXPECT_EQ(a.getSpeed(), 250);
 }
 
-TEST(AutobotTest, TransformOverriden) {
+TEST(AutobotTest, TransformOverriden)
+{
     Weapon w("Blaster", 80);
     Autobot a("Bee", 7, 120, &w, "Car", 50, 200);
 
@@ -39,7 +42,8 @@ TEST(AutobotTest, TransformOverriden) {
     EXPECT_NE(output.find("Bee transforms into Car."), std::string::npos);
 }
 
-TEST(AutobotTest, RepairTest) {
+TEST(AutobotTest, RepairTest)
+{
     Weapon w("Blaster", 80);
     Autobot a("Bee", 7, 120, &w, "Car", 50, 200);
 
@@ -49,3 +53,28 @@ TEST(AutobotTest, RepairTest) {
 
     EXPECT_NE(output.find("Bee is repairing allies."), std::string::npos);
 }
+
+TEST(AutobotTest, DefendMethod)
+{
+    Weapon w("Blaster", 80);
+    Autobot a("Bee", 7, 120, &w, "Car", 50, 200);
+
+    testing::internal::CaptureStdout();
+    a.defend();
+    std::string out = testing::internal::GetCapturedStdout();
+
+    EXPECT_NE(out.find("defends"), std::string::npos);
+}
+
+TEST(AutobotTest, OperatorOutput)
+{
+    Weapon w("Blaster", 80);
+    Autobot a("Bee", 7, 120, &w, "Car", 50, 200);
+
+    std::stringstream ss;
+    ss << a;
+    std::string out = ss.str();
+
+    EXPECT_NE(out.find("Autobot"), std::string::npos);
+}
+
